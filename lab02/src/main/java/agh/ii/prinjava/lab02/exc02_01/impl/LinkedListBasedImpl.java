@@ -9,7 +9,7 @@ public class LinkedListBasedImpl implements StackOfInts {
 
         if (numOfElems!=0){
             int a = node.elem;
-            node = node.next
+            node = node.next;
             return a;
         }
         throw new IllegalStateException("null");
