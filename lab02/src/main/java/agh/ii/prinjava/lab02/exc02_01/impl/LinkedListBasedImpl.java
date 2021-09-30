@@ -10,6 +10,7 @@ public class LinkedListBasedImpl implements StackOfInts {
         if (numOfElems!=0){
             int a = node.elem;
             node = node.next;
+            numOfElems-=1;
             return a;
         }
         throw new IllegalStateException("null");
@@ -18,13 +19,18 @@ public class LinkedListBasedImpl implements StackOfInts {
     @Override
     public void push(int x) {
 
+        numOfElems++;
         if (numOfElems!=0){
             Node node2 = new Node(x);
             node2.next = node;
             node = node2;
-
         }
-        throw new IllegalStateException("null");
+
+        else{
+            Node node3 = new Node(x);
+            node = node3;
+        }
+        numOfElems++;
     }
 
     @Override
