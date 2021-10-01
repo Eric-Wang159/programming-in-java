@@ -11,56 +11,14 @@ import java.util.Arrays;
  * @see <a href="https://github.com/AdoptOpenJDK/openjdk-jdk16/blob/master/src/java.base/share/classes/java/lang/Cloneable.java">Cloneable</a>
  * @see <a href="https://github.com/AdoptOpenJDK/openjdk-jdk16/blob/master/src/java.base/share/classes/java/lang/Object.java">Object</a>
  */
-class ShalowCloner implements Cloneable {
-    private int x = 10;
-    private int[] ints = {1, 2, 3, 4, 5};
 
-    public void setIntAtIdx(int idx, int val) {
-        ints[idx] = val;
-    }
-
-    /**
-     * Creates a shallow copy of the source object
-     */
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone(); // shallow copy (but "ints" is of a reference type!)
-    }
-
-    @Override
-    public String toString() {
-        return "ShalowCloner{" + "x=" + x + ", ints=" + Arrays.toString(ints) + '}';
-    }
-}
 
 /**
  * DeepCloner constructs a deep copy of the source object
  *
  * @see <a href="https://en.wikipedia.org/wiki/Object_copying">Object copying</a>
  */
-class DeepCloner implements Cloneable {
-    private int x = 10;
-    private int[] ints = {1, 2, 3, 4, 5};
 
-    public void setIntAtIdx(int idx, int val) {
-        ints[idx] = val;
-    }
-
-    /**
-     * Creates a deep copy of the source object
-     */
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        DeepCloner clone = (DeepCloner) super.clone(); // Shallow copy (OK, for fields of primitive types)
-        clone.ints = ints.clone(); // <- Augment the above by a deep copy of the field of a reference type
-        return clone; // deep copy
-    }
-
-    @Override
-    public String toString() {
-        return "DeepCloner{" + "x=" + x + ", ints=" + Arrays.toString(ints) + '}';
-    }
-}
 
 public class Main {
     private static void shalowCloneDemo() {

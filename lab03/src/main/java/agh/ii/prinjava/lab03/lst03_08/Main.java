@@ -7,20 +7,17 @@ package agh.ii.prinjava.lab03.lst03_08;
  *
  * <p>Note: in modern Java, marker interfaces often can be replaced by annotations
  */
-interface Reliable {
-}
+
 
 /**
  * Dunedain is marked/tagged as Reliable
  */
-class Dunedain implements Reliable {
-}
+
 
 /**
  * Orc is not marked/tagged as Reliable
  */
-class Orc {
-}
+
 
 public class Main {
     private static void demo1(Object o) {
