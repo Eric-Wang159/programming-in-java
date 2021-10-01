@@ -7,6 +7,7 @@ import agh.ii.prinjava.lab02.exc02_01.StackOfInts;
  */
 public final class StackOfIntsFtry {
     private StackOfIntsFtry() {
+        throw new RuntimeException("lol");
     }
 
     enum Impln {
@@ -25,6 +26,9 @@ public final class StackOfIntsFtry {
         return switch (s) {
             case ARRAY_B -> new ArrayBasedImpl();
             case L_LIST_B -> new LinkedListBasedImpl();
+
         };
+
     }
+
 }
