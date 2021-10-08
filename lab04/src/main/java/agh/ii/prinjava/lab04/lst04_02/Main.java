@@ -39,29 +39,7 @@ package agh.ii.prinjava.lab04.lst04_02;
  * @param <T> the type of the element stored in the box
  * @see <a href="https://docs.oracle.com/javase/tutorial/extra/generics/index.html">Java Generics</a>
  */
-class GenBox<T> {
-    private T x;
 
-    public GenBox() {
-    }
-
-    public GenBox(T x) {
-        this.x = x;
-    }
-
-    public T getX() {
-        return x;
-    }
-
-    public void setX(T x) {
-        this.x = x;
-    }
-
-    @Override
-    public String toString() {
-        return "GenBox{" + "x=" + x + '}';
-    }
-}
 
 public class Main {
     /**

@@ -6,41 +6,13 @@ package agh.ii.prinjava.lab04.lst04_03;
  * <p>Generic methods allow type parameters to be used to express dependencies among
  * the types of one or more arguments to a method and/or its return type.
  */
-class C1 {
-    /**
-     * Instance generic method
-     */
-    <T> T m1(T x) {
-        return x;
-    }
 
-    /**
-     * Static generic method
-     */
-    static <T> T sm1(T y) {
-        return y;
-    }
-}
 
-class C2 {
-    /**
-     * Static generic method with two type parameters/variables
-     */
-    static <R, T> R m1(T x, R r) {
-        return r;
-    }
-}
+
 
 /**
  * Generic class with a generic method
  */
-class C3<T> { // This "T"...
-    private T x;
-
-    <T> T sm1(T x) { // <- ... has nothing to do with this "T"
-        return x;
-    }
-}
 
 /**
  * We use T for type, whenever there isn't anything more specific about the type to distinguish it.
@@ -54,45 +26,13 @@ class C3<T> { // This "T"...
  *
  * @see <a href="https://docs.oracle.com/javase/tutorial/extra/generics/methods.html">Generic Methods</a>
  */
-class C4<T> { // <- the "T" in this line
-    private T x;
 
-    <U> U sm1(U x) { // <- has nothing to do with this "T"
-        return x;
-    }
-}
 
-abstract class Shape {
-    abstract double area();
-}
 
-class Rectangle extends Shape {
-    private final double w;
-    private final double h;
 
-    public Rectangle(double w, double h) {
-        this.w = w;
-        this.h = h;
-    }
 
-    @Override
-    double area() {
-        return w * h;
-    }
-}
 
-class Circle extends Shape {
-    private final double r;
 
-    public Circle(double r) {
-        this.r = r;
-    }
-
-    @Override
-    double area() {
-        return Math.PI * r * r;
-    }
-}
 
 public class Main {
     /**
