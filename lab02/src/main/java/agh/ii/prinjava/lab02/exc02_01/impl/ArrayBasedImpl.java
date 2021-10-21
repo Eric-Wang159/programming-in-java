@@ -32,6 +32,7 @@ public class ArrayBasedImpl implements StackOfInts {
 
     @Override
     public int numOfElems() {
+
         return numOfElems;
     }
 

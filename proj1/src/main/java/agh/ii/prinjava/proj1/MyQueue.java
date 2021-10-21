@@ -30,10 +30,16 @@ public interface MyQueue<E> {
         return numOfElems() == 0;
     }
 
-
-
+    /**
+     *
+     * @return int, number of elements
+     */
     int numOfElems();
 
+    /**
+     *
+     * @return node, first node of the queue
+     */
     E peek();
 
     /** Consider pros and cons of having a factory method in the interface */

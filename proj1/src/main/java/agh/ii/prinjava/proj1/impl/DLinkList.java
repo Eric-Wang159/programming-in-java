@@ -17,6 +17,7 @@ public class DLinkList<E> {
      */
 
     public boolean isEmpty(){
+
         return first.elem == null;
     }
 
@@ -79,17 +80,17 @@ public class DLinkList<E> {
      * returns the node we delete
      */
 
-    public Node removeFirst(){
+    public E removeFirst(){
 
         Node<E> delete = first;
         if(!isEmpty() || first.next==null) {
 
             first = null;
-            return delete;
+            return delete.elem;
         }
         first = first.next;
         first.prev = null;
-        return delete;
+        return delete.elem;
 
     }
 
@@ -100,13 +101,13 @@ public class DLinkList<E> {
      * return node we delete
      */
 
-    public Node removeLast(){
+    public E removeLast(){
 
         Node<E> delete = first;
         if(!isEmpty() || first.next==null) {
 
             first = null;
-            return delete;
+            return delete.elem;
         }
 
 
@@ -117,7 +118,7 @@ public class DLinkList<E> {
         Node<E> temp = delete.prev;
         temp.next=null;
 
-        return delete;
+        return delete.elem;
 
     }
 
@@ -137,5 +138,35 @@ public class DLinkList<E> {
             temp = temp.next;
         }
         return stringnode + " }";
+    }
+
+    /**
+     *
+     * @return int, number of elements
+     */
+    int numOfElems(){
+        if(first.elem == null){
+            return 0;
+        }
+        else{
+            int counter = 1;
+            Node<E> temp = first;
+            while(temp.next != null) {
+                counter++;
+                temp = temp.next;
+            }
+            return counter;
+        }
+    }
+
+    /**
+     *
+     * @return node, first node of the list
+     */
+    public E peek(){
+        if (!isEmpty()){
+            return first.elem;
+        }
+        throw new IllegalStateException("null");
     }
 }
