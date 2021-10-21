@@ -2,6 +2,11 @@ package agh.ii.prinjava.proj1;
 
 import agh.ii.prinjava.proj1.impl.MyStackDLLBImpl;
 
+/**
+ *
+ * @param <E>
+ */
+
 public interface MyStack<E> {
     E pop();
 
