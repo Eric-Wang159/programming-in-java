@@ -2,7 +2,7 @@ package agh.ii.prinjava.proj1.impl;
 
 public class DLinkList<E> {
     // ...
-    private Node<E> first;
+    private Node<E> first = new Node<E>();
 
     private static class Node<T> {
         T elem;
@@ -29,18 +29,18 @@ public class DLinkList<E> {
 
     public void addFirst(E elem){
 
-        if (isEmpty()){
-            first.elem = elem;
-            first.next = null;
-            first.prev = null;
+        if (!isEmpty()){
+
+            Node<E> newNode = new Node<>();
+            newNode.elem = elem;
+            newNode.next = first;
+            first.prev = newNode;
+            first = newNode;
         }
 
         else{
-            Node<E> newNode = new Node<E>();
-            newNode.next = first;
-            first.prev = newNode;
-            newNode.elem = elem;
-            first = newNode;
+            first.elem = elem;
+
         }
     }
 
@@ -59,7 +59,8 @@ public class DLinkList<E> {
         }
 
         else{
-            Node<E> temp = first;
+            Node<E> temp = new Node<E>();
+            temp = first;
 
             while (temp.next != null){
                 temp = temp.next;
@@ -83,8 +84,10 @@ public class DLinkList<E> {
     public E removeFirst(){
 
         Node<E> delete = first;
-        if(!isEmpty() || first.next==null) {
-
+        if(isEmpty()) {
+            return null;
+        }
+        else if(first.next==null){
             first = null;
             return delete.elem;
         }
@@ -104,12 +107,9 @@ public class DLinkList<E> {
     public E removeLast(){
 
         Node<E> delete = first;
-        if(!isEmpty() || first.next==null) {
-
-            first = null;
-            return delete.elem;
+        if(isEmpty()) {
+            return null;
         }
-
 
         while(delete.next !=null){
             delete = delete.next;
@@ -122,6 +122,16 @@ public class DLinkList<E> {
 
     }
 
+    public E getLast(){
+        Node<E> temp = first;
+
+        while(temp.next != null){
+            temp = temp.next;
+        }
+
+        return temp.elem;
+    }
+
     /**
      *
      * @return tostring
@@ -132,12 +142,13 @@ public class DLinkList<E> {
     public String toString() {
         Node<E> temp = first;
         String stringnode = "DLinkList{ ";
-
-        while(temp.next != null){
-            stringnode += temp.elem + " / ";
-            temp = temp.next;
+        if (!isEmpty()) {
+            while (temp != null) {
+                stringnode += temp.elem + " ";
+                temp = temp.next;
+            }
         }
-        return stringnode + " }";
+        return stringnode + "}";
     }
 
     /**

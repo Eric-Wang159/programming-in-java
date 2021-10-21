@@ -3,7 +3,7 @@ package agh.ii.prinjava.proj1.impl;
 import agh.ii.prinjava.proj1.MyStack;
 
 public class MyStackDLLBImpl<E> implements MyStack<E> {
-    private DLinkList<E> elems;
+    private DLinkList<E> elems = new DLinkList<>();
 
     /**
      *
@@ -11,10 +11,10 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
      */
     @Override
     public E pop() {
-        if (elems.isEmpty()){
+        if (!elems.isEmpty()){
             return elems.removeLast();
         }
-        throw new IllegalStateException("null");
+        throw new RuntimeException("null");
     }
 
     /**
@@ -33,6 +33,7 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
      */
     @Override
     public int numOfElems() {
+
         return elems.numOfElems();
     }
 
@@ -42,6 +43,12 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
      */
     @Override
     public E peek() {
+
         return elems.peek();
+    }
+
+    @Override
+    public String toString(){
+        return "Stack{" + elems.toString() + "}";
     }
 }
