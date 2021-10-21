@@ -51,6 +51,10 @@ public class MyQueueDLLBImpl<E> implements MyQueue<E> {
         throw new RuntimeException("null");
     }
 
+    /**
+     *
+     * @return queue string
+     */
     @Override
     public String toString(){
         return "Queue{" + elems.toString() + "}";

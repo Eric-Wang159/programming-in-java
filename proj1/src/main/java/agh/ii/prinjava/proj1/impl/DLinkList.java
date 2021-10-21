@@ -122,6 +122,11 @@ public class DLinkList<E> {
 
     }
 
+    /**
+     *
+     * @return last element of the list
+     */
+
     public E getLast(){
         Node<E> temp = first;
 
@@ -178,6 +183,6 @@ public class DLinkList<E> {
         if (!isEmpty()){
             return first.elem;
         }
-        throw new IllegalStateException("null");
+        throw new RuntimeException("null");
     }
 }

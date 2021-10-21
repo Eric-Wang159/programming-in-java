@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="agh.ii.prinjava.proj1.impl.DLinkListTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-10-21T20:34:13" hostname="DESKTOP-TV3NLIJ" time="0.033">
+<testsuite name="agh.ii.prinjava.proj1.impl.DLinkListTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-10-21T20:38:18" hostname="DESKTOP-TV3NLIJ" time="0.029">
   <properties/>
-  <testcase name="removeFirstTest()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.027"/>
+  <testcase name="removeFirstTest()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.023"/>
   <testcase name="addFirstTest()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>
   <testcase name="peekTest()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>
   <testcase name="numOfElemsTest()" classname="agh.ii.prinjava.proj1.impl.DLinkListTest" time="0.001"/>

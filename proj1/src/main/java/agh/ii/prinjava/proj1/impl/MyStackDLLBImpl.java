@@ -47,6 +47,10 @@ public class MyStackDLLBImpl<E> implements MyStack<E> {
         return elems.peek();
     }
 
+    /**
+     *
+     * @return stack string
+     */
     @Override
     public String toString(){
         return "Stack{" + elems.toString() + "}";
