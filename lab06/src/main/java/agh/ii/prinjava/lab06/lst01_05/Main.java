@@ -139,17 +139,11 @@ public class Main {
 /**
  * Auxiliary classes
  */
-record Person1(String givenName,
-               String middleName, // <- some people do not have a middle name
-               String surname) {
-}
+
 
 /**
  * {@code Optional} makes the model more explicit: the middleName is an optional value
  *
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html">Optional</a>
  */
-record Person2(String givenName,
-               Optional<String> middleName,
-               String surname) {
-}
+

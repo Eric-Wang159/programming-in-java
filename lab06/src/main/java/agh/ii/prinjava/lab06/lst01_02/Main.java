@@ -188,4 +188,4 @@ public class Main {
     }
 }
 
-enum ThreeColours {BLUE, WHITE, RED}
+

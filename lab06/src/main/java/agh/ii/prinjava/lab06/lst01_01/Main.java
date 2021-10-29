@@ -22,29 +22,12 @@ package agh.ii.prinjava.lab06.lst01_01;
  *
  * @see <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/FunctionalInterface.html">FunctionalInterface</a>
  */
-@FunctionalInterface
-interface Flyable {
-    void flyTo(double latitude, double longitude);
-}
+
 
 /**
  * Functional interface is just a specific type of interface, so it can be implemented
  */
-class Superman implements Flyable {
-    private static final Superman INSTANCE = new Superman();
 
-    private Superman() {
-    }
-
-    public static Superman getInstance() {
-        return INSTANCE;
-    }
-
-    @Override
-    public void flyTo(double latitude, double longitude) {
-        System.out.println("Superman is flying to (" + latitude + ", " + longitude + ")");
-    }
-}
 
 public class Main {
     private static void demo1() {
@@ -148,36 +131,10 @@ public class Main {
 /**
  * Auxiliary definitions
  */
-class C1 {
-    C1(double x, double y) {
-        System.out.println("Building C1 with (x = " + x + ", y = " + y + ")...");
-    }
 
-    void m1(double x, double y) {
-        System.out.println("C1.m1(x=" + x + ", y=" + y + ")");
-    }
 
-    void m2(double x) {
-        System.out.println("C1.m1(x=" + x + ")");
-    }
 
-    static void sm1(double a, double b) {
-        System.out.println("C1.sm1(x=" + a + ", b=" + b + ")");
-    }
-}
 
-class C2 {
-    C2(double x, double y) {
-        System.out.println("Building C2 with (x = " + x + ", y = " + y + ")...");
-    }
-}
 
-@FunctionalInterface
-interface I1 {
-    void f1(double x);
-}
 
-@FunctionalInterface
-interface IFactory<T> {
-    T create(double a, double b);
-}
+
