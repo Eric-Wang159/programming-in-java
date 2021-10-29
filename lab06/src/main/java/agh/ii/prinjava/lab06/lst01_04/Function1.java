@@ -1,5 +1,6 @@
 package agh.ii.prinjava.lab06.lst01_04;
 
+@FunctionalInterface
 interface Function1<T, R> {
     R apply(T x);
 
